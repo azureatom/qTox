@@ -8,7 +8,6 @@ branches:
   only:
     - master
     - /^v(\d+\.){2}\d+$/
-    - winDeploy # remove after testing
 
 matrix:
   fast_finish: true
@@ -131,8 +130,7 @@ deploy:
     on:
       condition: $WINDOWS_BUILD_ARCH_CACHE_TRICK_VARIABLE == x86_64 && -f /home/travis/build/qTox/qTox/stage3 && -f /home/travis/build/qTox/qTox/release
       repo: qTox/qTox
-      #tags: true # uncomment after testing
-      branch: winDeploy # remove after testing
+      tags: true
     skip_cleanup: true
 
   # Windows Installer 32Bit
@@ -143,8 +141,7 @@ deploy:
     on:
       condition: $WINDOWS_BUILD_ARCH_CACHE_TRICK_VARIABLE == i686 && -f /home/travis/build/qTox/qTox/stage3 && -f /home/travis/build/qTox/qTox/release
       repo: qTox/qTox
-      #tags: true # uncomment after testing
-      branch: winDeploy # remove after testing
+      tags: true
     skip_cleanup: true
 
   # branch for windows jenkins build
